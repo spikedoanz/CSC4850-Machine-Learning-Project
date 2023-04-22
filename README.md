@@ -4,8 +4,8 @@ Researching the OKCupid dating profile data set using machine learning models to
 2. [Expectations](#expectations)
 2. [Pipeline Info](#pipeline-info)
 4. [Dataset and Features](#dataset-and-features)
-4. [Technologies Used](#technologies-used)
-3. [ML Models Used](https://github.com/manhtiendoan/CSC4850-Machine-Learning-Project/edit/main/README.md#technologies-used)
+4. [Technologies](#technologies)
+3. [Machine Learning Models](https://github.com/manhtiendoan/CSC4850-Machine-Learning-Project/edit/main/README.md#machine-learning-models)
 4. [Results](#results)
 7. [Citations](#citations)  
 8. [Special Thanks](#special-thanks)    
@@ -23,7 +23,7 @@ Researching the OKCupid dating profile data set using machine learning models to
 ### Feature Selection
 ### Star Sign Intensity   
 
-# Technologies Used  
+# Technologies  
 ### [Python](https://www.python.org/) <img src="https://user-images.githubusercontent.com/60898339/222571123-81f8e8e4-b183-4f92-a4bc-95d9d3e9f007.png" width=25 height=25>
 
 ### [Google Colab](https://colab.research.google.com/) <img src="https://user-images.githubusercontent.com/60898339/233802082-d2c46791-530f-4c95-9bd0-0b0889f8a601.png" width=25 height=25>
@@ -34,7 +34,7 @@ Researching the OKCupid dating profile data set using machine learning models to
 ### [Pandas](https://pandas.pydata.org/) <img src="https://user-images.githubusercontent.com/60898339/233802257-a731902d-9557-4707-bfae-2ea0dfb3bf4b.svg" width=55 height=35>
 ### [Matplotlib](https://matplotlib.org/) <img src="https://user-images.githubusercontent.com/60898339/233802324-53ef5e2f-c190-43b1-a763-6c889f8d87cb.svg" width=65 height=45>
 
-# Machine Learning Models Used 
+# Machine Learning Models 
 * [Decision Tree Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html)
 * [Support Vector Machine (Linear Kernel)](https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html)
 * [Support Vector Machine (RBF Kernel)](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html)
@@ -51,7 +51,7 @@ Researching the OKCupid dating profile data set using machine learning models to
 # Citations  
 
 # Special Thanks
-The 'star sign' team would like to thank our Professor **Dr. Juan M. Banda** for guiding us througout the semester! 
+The 'star sign' team would like to thank our Professor **Dr. Juan M. Banda** for guiding us this the semester! 
 <a href="https://github.com/jmbanda"><img src="https://user-images.githubusercontent.com/60898339/222575865-617bc990-796a-4e29-834e-b30762f11526.png" width=25 height=25></a> 		
 <a href="https://www.linkedin.com/in/jmbanda/"><img src="https://user-images.githubusercontent.com/60898339/222576175-1d3213f8-a001-4e7e-bb75-046fe5951fe3.png" width=25 height=25></a>
 
