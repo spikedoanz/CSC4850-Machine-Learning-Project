@@ -51,7 +51,7 @@ Researching the OKCupid dating profile data set using machine learning models to
 # Citations  
 
 # Special Thanks
-The 'star sign' team would like to thank our Professor **Dr. Juan M. Banda** for guiding us this the semester! 
+The 'star sign' team would like to thank our Professor **Dr. Juan M. Banda** for guiding us this semester! 
 <a href="https://github.com/jmbanda"><img src="https://user-images.githubusercontent.com/60898339/222575865-617bc990-796a-4e29-834e-b30762f11526.png" width=25 height=25></a> 		
 <a href="https://www.linkedin.com/in/jmbanda/"><img src="https://user-images.githubusercontent.com/60898339/222576175-1d3213f8-a001-4e7e-bb75-046fe5951fe3.png" width=25 height=25></a>
 
