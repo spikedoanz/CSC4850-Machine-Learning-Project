@@ -1,4 +1,4 @@
-Researching the OKCupid dating profile data set using machine learning models to predict user star sign 'intensity'.
+Researching the OkCupid dating profile data set using machine learning models to predict user star sign 'intensity'.
 # Table Of Contents
 1. [Project Summary](#project-summary)  
 2. [Expectations](#expectations)
@@ -12,28 +12,37 @@ Researching the OKCupid dating profile data set using machine learning models to
 9. [Contributors](#contributors)  
 
 # Project Summary  
->> This project involves the assessment of twelve machine learning models using the 2012 OKCupid dataset. This study aims to evaluate the performance of these models and determine which is most effective at classifying a user’s ‘Star Sign Intensity’. ‘Star Sign Intensity’ is a composite feature based on self-reported OKcupid survey data representing one’s affinity or interest in their zodiac sign. The performance of each model was evaluated based on metrics including accuracy, precision, recall, F1 score, and associated learning curves. Model selection, for each algorithm, compared three independent train/test splits (50-50, 70-30, and 80-20) before undergoing 10-fold cross-validation. The results of which were compared and the best models (by metrics) for each were selected by hand. The findings of this study do not necessarily support much in the way of predicting a human’s interest in star signs in the given context but do provide valuable insights into the appropriate selection of machine learning models and algorithms for any application.
+>> This project involves the assessment of twelve machine learning models using the 2012 OkCupid dataset. This study aims to evaluate the performance of these models and determine which is most effective at classifying a user’s ‘Star Sign Intensity’. The performance of each model was evaluated based on metrics including accuracy, precision, recall, F1 score, and associated learning curves. Model selection, for each algorithm, compared three independent train/test splits (50-50, 70-30, and 80-20) before undergoing 10-fold cross-validation. The results of which were compared and the best models (by metrics) for each were selected by hand. The findings of this study do not necessarily support much in the way of predicting a human’s interest in star signs in the given context but do provide valuable insights into the appropriate selection of machine learning models and algorithms for any application.
 
 # Expectations  
 
 # Pipeline Info  
 * Model initialization: All models were initialized with random_state = 1234 for reproducibility whenever possible  
-* Data splits: The models were trained on 3 split of the dataset in 3 ratios (50-50, 70-30, 80-20)  
-* Cross validation: For every split, every model is trained using 10-fold cross validation of the training set, from which a best model is selected.  
+* Data splits: The models were trained on 3 splits of the dataset in 3 ratios (50-50, 70-30, 80-20)  
+* Cross validation: For every split, every model is trained using 10-fold cross validation of the training set, from which the best model is selected.  
 * For classification models, we primarily used accuracy as the determining metric as our dataset is largely evenly split (47-53).  
 * From the best models chosen for every split, we choose the best model for every model type.  
-* Finally from all the models we choose a single best performer.  
+* Finally, from all the models we choose a single best performer.  
 * Notes on model evaluation: models that perform close to or worse than 0.53 (always guessing a single class) will be classified as poorly performing.  
 
 # Dataset and Features
 ### About the Dataset  
-### Raw Features  
+Dataset obtained from Kaggle.com(https://www.kaggle.com/datasets/andrewmvd/okcupid-profiles)
+>> OkCupid is a mobile dating app. It sets itself apart from other dating apps by making use of a precomputed compatibility score, calculated by optional questions the users may choose to answer.  In this dataset, there are 60k records containing structured information such as age, sex, orientation as well as text data from open ended descriptions.
+
+### Raw Data  
 * age, status, sex, orientation, body_type, diet, drinks, drugs, education, ethnicity, height, income, job, last_online, location, offspring, pets, religion, sign, smokes, speaks, essay0, essay1, essay2, essay3, essay4, essay5, essay6, essay7, essay8, essay9
 * 59,949 raw entries 
 * .csv format
 
+For training and predicting, all used features were converted to numeric or binary data. These features are labeled with '_data' for use as an official for use in training and testing the models. 
+
 ### Feature Selection
+ The following fields were used for classification: 
+ >> 'age', 'height', 'income', 'sign_data', 'religion_data', 'religion_intensity', 'status_data', 'sex_data', 'height_data', 'orientation_data', 'body_type_data', 'diet_data' 'drinks_data', 'drugs_data', 'education_data', 'job_data', 'last_online_data', 'offspring_data', 'smokes_data', 'speaks_data', 'essay0_data', 'essay1_data', 'essay2_data', 'essay3_data', 'essay4_data', 'essay5_data', 'essay6_data', 'essay7_data', 'essay8_data', 'essay9_data', 'essay_len'.
+
 ### Star Sign Intensity   
+Since predicting a persons Astrological Sign was not a solvable problem with this data set and these techniques an alternative metric was used: Star Sign Intensity. Star Sign Intensity is a composite feature based on self-reported OkCupid survey data representing one’s affinity or interest in their zodiac sign. This data was reported as part of the original column but separated by a comma from the original sign value. For example, an entry might contain "Leo, and it matters a lot'. The three possible options for this sub-field were combined into two to create a binary classification problem: "My sign matters" and "My sign doesn't matter".  
 
 # Technologies  
 ### [Python](https://www.python.org/) <img src="https://user-images.githubusercontent.com/60898339/222571123-81f8e8e4-b183-4f92-a4bc-95d9d3e9f007.png" width=25 height=25>
@@ -59,20 +68,655 @@ Researching the OKCupid dating profile data set using machine learning models to
 
 
 # Results 
-### Learning Curves for all models per split
-<div align="center">
+### Tables of models selected from 10-fold cross validation for each split.
+<table width="0"  align="">
+<tbody>
+<tr>
+<td width="139">
+<p><strong>Split 0 (50/50)</strong></p>
+</td>
+<td width="139">
+<p><strong>Accuracy</strong></p>
+</td>
+<td width="139">
+<p><strong>Precision</strong></p>
+</td>
+<td width="139">
+<p><strong>Recall</strong></p>
+</td>
+<td width="139">
+<p><strong>F1-Score</strong></p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>Decision Tree</p>
+</td>
+<td width="139">
+<p>0.59</p>
+</td>
+<td width="139">
+<p>0.59</p>
+</td>
+<td width="139">
+<p>0.59</p>
+</td>
+<td width="139">
+<p>0.59</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>Perceptron</p>
+</td>
+<td width="139">
+<p>0.51</p>
+</td>
+<td width="139">
+<p>0.5</p>
+</td>
+<td width="139">
+<p>0.51</p>
+</td>
+<td width="139">
+<p>0.48</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>Naive Bayes</p>
+</td>
+<td width="139">
+<p>0.51</p>
+</td>
+<td width="139">
+<p>0.52</p>
+</td>
+<td width="139">
+<p>0.51</p>
+</td>
+<td width="139">
+<p>0.48</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>Logistic Regression</p>
+</td>
+<td width="139">
+<p>0.6</p>
+</td>
+<td width="139">
+<p>0.59</p>
+</td>
+<td width="139">
+<p>0.6</p>
+</td>
+<td width="139">
+<p>0.59</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>SVM - Linear Kernel</p>
+</td>
+<td width="139">
+<p>0.59</p>
+</td>
+<td width="139">
+<p>0.59</p>
+</td>
+<td width="139">
+<p>0.59</p>
+</td>
+<td width="139">
+<p>0.59</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>SVM - RBF Kernel</p>
+</td>
+<td width="139">
+<p>0.5</p>
+</td>
+<td width="139">
+<p>0.51</p>
+</td>
+<td width="139">
+<p>0.5</p>
+</td>
+<td width="139">
+<p>0.47</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>Multilayer Perceptron</p>
+</td>
+<td width="139">
+<p>0.53</p>
+</td>
+<td width="139">
+<p>0.54</p>
+</td>
+<td width="139">
+<p>0.53</p>
+</td>
+<td width="139">
+<p>0.51</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>Gradient Boosting</p>
+</td>
+<td width="139">
+<p>0.61</p>
+</td>
+<td width="139">
+<p>0.61</p>
+</td>
+<td width="139">
+<p>0.61</p>
+</td>
+<td width="139">
+<p>0.61</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>Ridge Regression</p>
+</td>
+<td width="139">
+<p>0.6</p>
+</td>
+<td width="139">
+<p>0.6</p>
+</td>
+<td width="139">
+<p>0.6</p>
+</td>
+<td width="139">
+<p>0.6</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>K-Nearest Neighbors</p>
+</td>
+<td width="139">
+<p>0.51</p>
+</td>
+<td width="139">
+<p>0.51</p>
+</td>
+<td width="139">
+<p>0.51</p>
+</td>
+<td width="139">
+<p>0.51</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>Passive Aggressive</p>
+</td>
+<td width="139">
+<p>0.52</p>
+</td>
+<td width="139">
+<p>0.49</p>
+</td>
+<td width="139">
+<p>0.52</p>
+</td>
+<td width="139">
+<p>0.37</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+
+<table width="0"  align="">
+<tbody>
+<tr>
+<td width="139">
+<p><strong>Split 1 (70/30)</strong></p>
+</td>
+<td width="139">
+<p><strong>Accuracy</strong></p>
+</td>
+<td width="139">
+<p><strong>Precision</strong></p>
+</td>
+<td width="139">
+<p><strong>Recall</strong></p>
+</td>
+<td width="139">
+<p><strong>F1-Score</strong></p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>Decision Tree</p>
+</td>
+<td width="139">
+<p>0.61</p>
+</td>
+<td width="139">
+<p>0.61</p>
+</td>
+<td width="139">
+<p>0.61</p>
+</td>
+<td width="139">
+<p>0.61</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>Perceptron</p>
+</td>
+<td width="139">
+<p>0.51</p>
+</td>
+<td width="139">
+<p>0.49</p>
+</td>
+<td width="139">
+<p>0.51</p>
+</td>
+<td width="139">
+<p>0.46</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>Naive Bayes</p>
+</td>
+<td width="139">
+<p>0.55</p>
+</td>
+<td width="139">
+<p>0.55</p>
+</td>
+<td width="139">
+<p>0.55</p>
+</td>
+<td width="139">
+<p>0.55</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>Logistic Regression</p>
+</td>
+<td width="139">
+<p>0.6</p>
+</td>
+<td width="139">
+<p>0.6</p>
+</td>
+<td width="139">
+<p>0.6</p>
+</td>
+<td width="139">
+<p>0.6</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>SVM - Linear Kernel</p>
+</td>
+<td width="139">
+<p>0.59</p>
+</td>
+<td width="139">
+<p>0.6</p>
+</td>
+<td width="139">
+<p>0.59</p>
+</td>
+<td width="139">
+<p>0.59</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>SVM - RBF Kernel</p>
+</td>
+<td width="139">
+<p>0.49</p>
+</td>
+<td width="139">
+<p>0.5</p>
+</td>
+<td width="139">
+<p>0.49</p>
+</td>
+<td width="139">
+<p>0.46</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>Multilayer Perceptron</p>
+</td>
+<td width="139">
+<p>0.52</p>
+</td>
+<td width="139">
+<p>0.52</p>
+</td>
+<td width="139">
+<p>0.52</p>
+</td>
+<td width="139">
+<p>0.51</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>Gradient Boosting</p>
+</td>
+<td width="139">
+<p>0.62</p>
+</td>
+<td width="139">
+<p>0.62</p>
+</td>
+<td width="139">
+<p>0.62</p>
+</td>
+<td width="139">
+<p>0.62</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>Ridge Regression</p>
+</td>
+<td width="139">
+<p>0.6</p>
+</td>
+<td width="139">
+<p>0.6</p>
+</td>
+<td width="139">
+<p>0.6</p>
+</td>
+<td width="139">
+<p>0.6</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>K-Nearest Neighbors</p>
+</td>
+<td width="139">
+<p>0.51</p>
+</td>
+<td width="139">
+<p>0.51</p>
+</td>
+<td width="139">
+<p>0.51</p>
+</td>
+<td width="139">
+<p>0.51</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>Passive Aggressive</p>
+</td>
+<td width="139">
+<p>0.53</p>
+</td>
+<td width="139">
+<p>0.52</p>
+</td>
+<td width="139">
+<p>0.53</p>
+</td>
+<td width="139">
+<p>0.45</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+
+<table width="0"  align="">
+<tbody>
+<tr>
+<td width="139">
+<p><strong>Sprint 2 (80/20)</strong></p>
+</td>
+<td width="139">
+<p><strong>Accuracy</strong></p>
+</td>
+<td width="139">
+<p><strong>Precision</strong></p>
+</td>
+<td width="139">
+<p><strong>Recall</strong></p>
+</td>
+<td width="139">
+<p><strong>F1-Score</strong></p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>Decision Tree</p>
+</td>
+<td width="139">
+<p>0.62</p>
+</td>
+<td width="139">
+<p>0.62</p>
+</td>
+<td width="139">
+<p>0.62</p>
+</td>
+<td width="139">
+<p>0.62</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>Perceptron</p>
+</td>
+<td width="139">
+<p>0.5</p>
+</td>
+<td width="139">
+<p>0.48</p>
+</td>
+<td width="139">
+<p>0.5</p>
+</td>
+<td width="139">
+<p>0.45</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>Naive Bayes</p>
+</td>
+<td width="139">
+<p>0.55</p>
+</td>
+<td width="139">
+<p>0.55</p>
+</td>
+<td width="139">
+<p>0.55</p>
+</td>
+<td width="139">
+<p>0.55</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>Logistic Regression</p>
+</td>
+<td width="139">
+<p>0.59</p>
+</td>
+<td width="139">
+<p>0.59</p>
+</td>
+<td width="139">
+<p>0.59</p>
+</td>
+<td width="139">
+<p>0.59</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>SVM - Linear Kernel</p>
+</td>
+<td width="139">
+<p>0.58</p>
+</td>
+<td width="139">
+<p>0.59</p>
+</td>
+<td width="139">
+<p>0.58</p>
+</td>
+<td width="139">
+<p>0.58</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>SVM with RBF Kernel</p>
+</td>
+<td width="139">
+<p>0.49</p>
+</td>
+<td width="139">
+<p>0.5</p>
+</td>
+<td width="139">
+<p>0.49</p>
+</td>
+<td width="139">
+<p>0.46</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>Multilayer Perceptron</p>
+</td>
+<td width="139">
+<p>0.53</p>
+</td>
+<td width="139">
+<p>0.53</p>
+</td>
+<td width="139">
+<p>0.53</p>
+</td>
+<td width="139">
+<p>0.53</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>Gradient Boosting</p>
+</td>
+<td width="139">
+<p>0.61</p>
+</td>
+<td width="139">
+<p>0.61</p>
+</td>
+<td width="139">
+<p>0.61</p>
+</td>
+<td width="139">
+<p>0.61</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>Ridge Regression</p>
+</td>
+<td width="139">
+<p>0.59</p>
+</td>
+<td width="139">
+<p>0.59</p>
+</td>
+<td width="139">
+<p>0.59</p>
+</td>
+<td width="139">
+<p>0.59</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>K-Nearest Neighbors</p>
+</td>
+<td width="139">
+<p>0.5</p>
+</td>
+<td width="139">
+<p>0.5</p>
+</td>
+<td width="139">
+<p>0.5</p>
+</td>
+<td width="139">
+<p>0.5</p>
+</td>
+</tr>
+<tr>
+<td width="139">
+<p>Passive Aggressive</p>
+</td>
+<td width="139">
+<p>0.53</p>
+</td>
+<td width="139">
+<p>0.44</p>
+</td>
+<td width="139">
+<p>0.53</p>
+</td>
+<td width="139">
+<p>0.37</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>  
+
+## Learning Curves for all models per split
+<div align="">
 	<img src="https://user-images.githubusercontent.com/60898339/234112473-6d06d936-2965-4813-ad0d-1cd5eda2b936.png">  
 </div>
-<div align="center">
+<div align="">
 	<img src="https://user-images.githubusercontent.com/60898339/234112545-0ea1dfa6-3749-4de9-a523-34af293866c7.png">  
 </div>
-<div align="center">
+<div align="">
 	<img src="https://user-images.githubusercontent.com/60898339/234112728-997cd7e5-7f47-4add-9fbb-dfdde8a18f7b.png">  
 </div>
-<div align="center">
+<div align="">
 	<img src="https://user-images.githubusercontent.com/60898339/234113279-c8d297df-5a4a-44e9-bd9b-f1979262b2d5.png">  
 </div>
 
+## Best Performers
+The best performing algorithms on this classification problem were Decision Tree (F1 of 0.62 on split 2), Gradient Boosting (F1 of 0.62 on Split 1) and Logistic regression (F1 of 0.60 on split 1). Overall, Decision Tree was chosen as the winning algorithm. 
+
+Some of the poorer performing models include Perceptron and SVM with RBF Kernel, which consistently achieve scores worse than simply predicting a single class. The Passive aggressive classifier also tends to perform poorly, achieving an F1-Score below 0.4 in two of the three splits. 
 
 # Citations
 
