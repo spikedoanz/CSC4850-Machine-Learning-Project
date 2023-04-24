@@ -27,7 +27,7 @@ Researching the OkCupid dating profile data set using machine learning models to
 
 # Dataset and Features
 ### About the Dataset  
-Dataset obtained from Kaggle.com(https://www.kaggle.com/datasets/andrewmvd/okcupid-profiles)
+Dataset obtained from [Kaggle.com](https://www.kaggle.com/datasets/andrewmvd/okcupid-profiles)
 >> OkCupid is a mobile dating app. It sets itself apart from other dating apps by making use of a precomputed compatibility score, calculated by optional questions the users may choose to answer.  In this dataset, there are 60k records containing structured information such as age, sex, orientation as well as text data from open ended descriptions.
 
 ### Raw Data  
