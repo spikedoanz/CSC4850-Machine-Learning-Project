@@ -49,7 +49,7 @@ Researching the OKCupid dating profile data set using machine learning models to
 # Results  
 
 # Citations  
-
+F. Pedregosa et al., “Scikit-learn: Machine Learning in Python,” Journal of Machine Learning Research, vol. 12, pp. 2825–2830, 2011.  
 # Special Thanks
 The 'star sign' team would like to thank our Professor **Dr. Juan M. Banda** for guiding us this semester! 
 <a href="https://github.com/jmbanda"><img src="https://user-images.githubusercontent.com/60898339/222575865-617bc990-796a-4e29-834e-b30762f11526.png" width=25 height=25></a> 		
