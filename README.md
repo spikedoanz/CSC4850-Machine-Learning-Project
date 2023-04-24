@@ -755,4 +755,6 @@ The 'star sign' team would like to thank our Professor **Dr. Juan M. Banda** for
 		<a href="https://www.linkedin.com/in/robert-tognoni-9a4795b0"><img  src="https://user-images.githubusercontent.com/60898339/222576175-1d3213f8-a001-4e7e-bb75-046fe5951fe3.png" width=25 height=25></a> 
 		</td>  
 	</tr>
-</div>
+</div>  
+
+>> Contributions to this Github repository do not necessarily reflect contributions to the project as a whole. Code and textual content were worked on collaboratively by all team members, and then uploaded here for final submission
