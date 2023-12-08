@@ -1,5 +1,7 @@
-Researching the OkCupid dating profile data set using machine learning models to predict user star sign 'intensity'.
-# Table Of Contents
+# Predicting belief in astrology using OKCupid dating profile metadata
+---
+
+## Table Of Contents
 1. [Project Summary](#project-summary)  
 2. [Expectations](#expectations)
 2. [Pipeline Info](#pipeline-info)
@@ -11,12 +13,11 @@ Researching the OkCupid dating profile data set using machine learning models to
 8. [Special Thanks](#special-thanks)    
 9. [Contributors](#contributors)  
 
-# Project Summary  
+## Project Summary  
 >> This project involves the assessment of twelve machine learning models using the 2012 OkCupid dataset. This study aims to evaluate the performance of these models and determine which is most effective at classifying a user’s ‘Star Sign Intensity’. The performance of each model was evaluated based on metrics including accuracy, precision, recall, F1 score, and associated learning curves. Model selection, for each algorithm, compared three independent train/test splits (50-50, 70-30, and 80-20) before undergoing 10-fold cross-validation. The results of which were compared and the best models (by metrics) for each were selected by hand. The findings of this study do not necessarily support much in the way of predicting a human’s interest in star signs in the given context but do provide valuable insights into the appropriate selection of machine learning models and algorithms for any application.
 
-# Expectations  
-
-# Pipeline Info  
+## Expectations  
+### Pipeline Info  
 * Model initialization: All models were initialized with random_state = 1234 for reproducibility whenever possible  
 * Data splits: The models were trained on 3 splits of the dataset in 3 ratios (50-50, 70-30, 80-20)  
 * Cross validation: For every split, every model is trained using 10-fold cross validation of the training set, from which the best model is selected.  
@@ -25,7 +26,7 @@ Researching the OkCupid dating profile data set using machine learning models to
 * Finally, from all the models we choose a single best performer.  
 * Notes on model evaluation: models that perform close to or worse than 0.53 (always guessing a single class) will be classified as poorly performing.  
 
-# Dataset and Features
+## Dataset and Features
 ### About the Dataset  
 Dataset obtained from [Kaggle.com](https://www.kaggle.com/datasets/andrewmvd/okcupid-profiles)
 >> OkCupid is a mobile dating app. It sets itself apart from other dating apps by making use of a precomputed compatibility score, calculated by optional questions the users may choose to answer.  In this dataset, there are 60k records containing structured information such as age, sex, orientation as well as text data from open ended descriptions.
@@ -44,7 +45,7 @@ For training and predicting, all used features were converted to numeric or bina
 ### Star Sign Intensity   
 Since predicting a persons Astrological Sign was not a solvable problem with this data set and these techniques an alternative metric was used: Star Sign Intensity. Star Sign Intensity is a composite feature based on self-reported OkCupid survey data representing one’s affinity or interest in their zodiac sign. This data was reported as part of the original column but separated by a comma from the original sign value. For example, an entry might contain "Leo, and it matters a lot'. The three possible options for this sub-field were combined into two to create a binary classification problem: "My sign matters" and "My sign doesn't matter".  
 
-# Technologies  
+## Technologies  
 ### [Python](https://www.python.org/) <img src="https://user-images.githubusercontent.com/60898339/222571123-81f8e8e4-b183-4f92-a4bc-95d9d3e9f007.png" width=25 height=25>
 
 ### [Google Colab](https://colab.research.google.com/) <img src="https://user-images.githubusercontent.com/60898339/233802082-d2c46791-530f-4c95-9bd0-0b0889f8a601.png" width=25 height=25>
@@ -55,7 +56,7 @@ Since predicting a persons Astrological Sign was not a solvable problem with thi
 ### [Pandas](https://pandas.pydata.org/) <img src="https://user-images.githubusercontent.com/60898339/233802257-a731902d-9557-4707-bfae-2ea0dfb3bf4b.svg" width=55 height=35>
 ### [Matplotlib](https://matplotlib.org/) <img src="https://user-images.githubusercontent.com/60898339/233802324-53ef5e2f-c190-43b1-a763-6c889f8d87cb.svg" width=65 height=45>
 
-# Machine Learning Models 
+## Machine Learning Models 
 * [Decision Tree Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html)
 * [Support Vector Machine (Linear Kernel)](https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html)
 * [Support Vector Machine (RBF Kernel)](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html)
@@ -67,7 +68,7 @@ Since predicting a persons Astrological Sign was not a solvable problem with thi
 * [Gradient Boosting](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html)
 
 
-# Results 
+## Results 
 ### Tables of models selected from 10-fold cross validation for each split.
 <table width="0"  align="">
 <tbody>
@@ -718,7 +719,7 @@ The best performing algorithms on this classification problem were Decision Tree
 
 Some of the poorer performing models include Perceptron and SVM with RBF Kernel, which consistently achieve scores worse than simply predicting a single class. The Passive aggressive classifier also tends to perform poorly, achieving an F1-Score below 0.4 in two of the three splits. 
 
-# Citations
+## Citations
 
 F. Pedregosa et al., “Scikit-learn: Machine Learning in Python,” Journal of Machine Learning Research, vol. 12, pp. 2825–2830, 2011. 
 ### Related Work & Other Resources
@@ -730,13 +731,13 @@ F. Pedregosa et al., “Scikit-learn: Machine Learning in Python,” Journal of 
 * I. Backus, "Predicting Gender from OKCupid profiles using ensemble methods" self published, Mar. 22, 2018. [Online]. Available: https://raw.githubusercontent.com/wiki/ibackus/okcupid-gender-prediction/okcupid_gender_prediction.pdf.
 * M. Campbell, "Investigating OkCupid profiles: Can we predict someone's city?" Medium, July 21, 2022. [Online]. Available: https://medium.com/@macrotentional/investigating-okcupid-profiles-can-we-predict-someones-city-31a4734e96dd.
 
-# Special Thanks
+## Special Thanks
 The 'star sign' team would like to thank our Professor **Dr. Juan M. Banda** for guiding us this semester! 
 <a href="https://github.com/jmbanda"><img src="https://user-images.githubusercontent.com/60898339/222575865-617bc990-796a-4e29-834e-b30762f11526.png" width=25 height=25></a> 		
 <a href="https://www.linkedin.com/in/jmbanda/"><img src="https://user-images.githubusercontent.com/60898339/222576175-1d3213f8-a001-4e7e-bb75-046fe5951fe3.png" width=25 height=25></a>
 
 
-# Contributors  
+## Contributors  
 <div align="">
 	<tr>
 		<td>
